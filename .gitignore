@@ -1,0 +1,5 @@
+notes
+*.bak
+*.py.bak
+*.txt
+test*
