@@ -8,10 +8,6 @@ while s != "end":
     s = input()
 
 i = 0
-while i < len(a) // 2:
-    tmp = a[i]
-    a[i] = a[len(a) - i - 1]
-    a[len(a) - i - 1] = tmp
+while i < len(a):
+    print(a[len(a) - i - 1])
     i = i + 1
-
-print(a)
