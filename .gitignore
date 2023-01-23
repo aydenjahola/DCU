@@ -1,10 +1,10 @@
-notes
+notes/
 *.bak
 *.py.bak
 *.txt
 test*
-troll
-past_exams
+troll/
+past_exams/
 ca172_problem_solving/
 vimwiki/
 Web_Design/
