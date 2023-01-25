@@ -38,7 +38,7 @@ typing cd / will take you to the root directory, typing cd .. will not do anythi
 an error will be thrown as cd / takes us to our root directory and mkdir stuff will try to make a new directory in the root directory but we dont have access to it. so permission denied
 
  Typing "cd \" causes what to happen?
-will prompt you to search for directory on your hard drive
+cd \ will prompt you a new line in the shell/terminal allowing the user for more input. then takes the user to the home directory
 
  What is the directory /bin for?
 for storing commands used by the OS and Admins, also its the programs directory
