@@ -13,7 +13,6 @@ shift
 
 for file in $*
 do
- ls -l $file
  cat $file | sed -e "s|$OLDSTRING|$NEWSTRING|g" > tmpfile
  cp tmpfile $file
  echo
