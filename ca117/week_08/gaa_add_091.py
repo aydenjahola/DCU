@@ -27,5 +27,15 @@ class Score(object):
     def __le__(self, other):
         return self.score2points() <= other.score2points()
 
+    def __add__(self, other):
+        goals = self.goals + other.goals
+        points = self.points + other.points
+        return Score(goals, points)
+
+    def __iadd__(self, other):
+        self.goals += other.goals
+        self.points += other.points
+        return self
+
     def score2points(self):
         return self.goals * 3 + self.points
