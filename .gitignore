@@ -2,6 +2,8 @@
 *.py.bak
 *.txt
 *.ipynb
+*.png
+*.jpg
 test*
 troll/
 past_exams/
