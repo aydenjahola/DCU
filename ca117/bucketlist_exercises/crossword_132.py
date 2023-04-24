@@ -2,17 +2,26 @@
 
 import sys
 
-# Read the input words from stdin
-a, b = input().split()
+a, b = input().strip().split()
 
-# Find the shared letter and its index in each word
-shared_letter = set(a) & set(b)
-shared_letter_index_a = max([a.rfind(l) for l in shared_letter])
-shared_letter_index_b = max([b.rfind(l) for l in shared_letter])
+x = None
+x_idx_a = None
+x_idx_b = None
+for i in range(len(a)-1, -1, -1):
+    if a[i] in b:
+        x = a[i]
+        x_idx_a = i
+        x_idx_b = b.rindex(x)
+        break
 
-# Print the crossword grid
-for i, c in enumerate(a):
-    if i == shared_letter_index_a:
-        print(b)
+grid = [['.' for _ in range(len(b))] for _ in range(len(a))]
+for i in range(len(a)):
+    if i == x_idx_a:
+        for j in range(len(b)):
+            grid[i][j] = b[j]
     else:
-        print('.' * shared_letter_index_b + c + '.' * (len(b) - shared_letter_index_b - 1))
+        grid[i][x_idx_b] = a[i]
+
+for row in grid:
+    print(''.join(row))
+

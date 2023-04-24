@@ -1,18 +1,12 @@
 #!/usr/bin/env python3
 
-points = []
-for _ in range(3):
-    x, y = map(int, input().split())
-    points.append((x, y))
+import sys
 
-x_coords = set()
-y_coords = set()
-for point in points:
-    x_coords.add(point[0])
-    y_coords.add(point[1])
+x1, y1 = map(int, sys.stdin.readline().split())
+x2, y2 = map(int, sys.stdin.readline().split())
+x3, y3 = map(int, sys.stdin.readline().split())
 
-missing_x = list(set(range(1, 1001)) - x_coords)[0]
-missing_y = list(set(range(1, 1001)) - y_coords)[0]
+x4 = x1 if x1 != x2 and x1 != x3 else x2 if x2 != x1 and x2 != x3 else x3
+y4 = y1 if y1 != y2 and y1 != y3 else y2 if y2 != y1 and y2 != y3 else y3
 
-print(missing_x, missing_y)
-
+print(x4, y4)

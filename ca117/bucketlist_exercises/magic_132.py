@@ -2,30 +2,33 @@
 
 import sys
 
-def is_magic(n):
-    while n > 0:
-        digit = n % 10
-        if digit != 3 and digit != 9:
-            return False
-        n //= 10
-    return True
-
-def generate_magic_numbers(k):
+def count_magic_numbers(n):
     count = 0
-    n = 1
-    while count < k:
-        if is_magic(n):
-            count += 1
-        if count == k:
-            return n
-        n += 1
-    return -1
+    power = 1
+    while power <= n:
+        count += (n // power) // 10 * power
+        remainder = (n // power) % 10
+        if remainder == 3:
+            count += n % power + 1
+        elif remainder == 9:
+            count += power
+        elif remainder > 3:
+            count += power
+        power *= 10
+    return count
 
-def main():
-    k = int(sys.stdin.readline().strip())
-    magic_number = generate_magic_numbers(k)
-    print(magic_number)
+def find_kth_magic_number(k, low, high):
+    if low == high:
+        return low
 
-if __name__ == '__main__':
-    main()
+    mid = (low + high) // 2
+    count = count_magic_numbers(mid)
+    if count < k:
+        return find_kth_magic_number(k, mid + 1, high)
+    else:
+        return find_kth_magic_number(k, low, mid)
+
+k = int(sys.stdin.readline())
+
+print(find_kth_magic_number(k, 1, 10**18))
 
