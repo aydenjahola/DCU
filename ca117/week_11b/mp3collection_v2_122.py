@@ -15,6 +15,7 @@ class MP3Track(object):
         return '\n'.join(r)
 
 class MP3Collection:
+
     def __init__(self):
         self.tracks = []
 
