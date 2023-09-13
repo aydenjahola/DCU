@@ -4,6 +4,7 @@
 *.ipynb
 *.png
 *.jpg
+notes/
 test*
 troll/
 past_exams/
