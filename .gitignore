@@ -4,6 +4,8 @@
 *.ipynb
 *.png
 *.jpg
+*.out
+*.zip
 notes/
 test*
 troll/
@@ -17,3 +19,4 @@ esports/
 solarracing/
 myscript
 __pycache__
+.vscode
