@@ -9,6 +9,7 @@ Output: It prints the longest word in the
 sentence followed by a newline character.
 */
 
+#include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
 
@@ -22,25 +23,37 @@ int main(int argc, char *argv[]) {
   int longestLength = 0;
   int currentLength = 0;
   int wordStart = 0;
+  bool inWord = false; // Flag to track if we are inside a word
 
-  // Iterate through the characters in the sentence
+  // Iterate through the characters in the sentence, including the null
+  // terminator
   for (int i = 0; sentence[i] != '\0'; i++) {
-    // Check if the current character is a space or the end of the sentence
-    if (sentence[i] == ' ' || sentence[i + 1] == '\0') {
+    // Check if the current character is not a space
+    if (sentence[i] != ' ') {
+      if (!inWord) {
+        // We are entering a new word, so update the wordStart
+        wordStart = i;
+        inWord = true;
+      }
+      currentLength++;
+    } else if (inWord) {
       // Calculate the length of the current word
-      currentLength = i - wordStart + 1;
-
-      // Check if the current word is longer than the longest word found so far
       if (currentLength > longestLength) {
         // Update the longest word and its length
         strncpy(longestWord, &sentence[wordStart], currentLength);
         longestWord[currentLength] = '\0'; // Null-terminate the longest word
         longestLength = currentLength;
       }
-
-      // Move the wordStart to the next character
-      wordStart = i + 1;
+      // Reset current word length and flag
+      currentLength = 0;
+      inWord = false;
     }
+  }
+
+  // Check the last word (if any) after the loop ends
+  if (inWord && currentLength > longestLength) {
+    strncpy(longestWord, &sentence[wordStart], currentLength);
+    longestWord[currentLength] = '\0';
   }
 
   // Print the longest word
