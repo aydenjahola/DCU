@@ -6,6 +6,7 @@
 *.jpg
 *.out
 *.zip
+
 notes/
 test*
 troll/
@@ -18,6 +19,8 @@ ca115/
 esports/
 solarracing/
 redbrick/
+year-2/ca284/practice/
+
 myscript
 __pycache__
 .vscode
