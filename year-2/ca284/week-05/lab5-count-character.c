@@ -16,27 +16,27 @@ Output: It prints the number of occurrences of the character in the string.
 int countCharacter(char ch, const char *str) {
     int count = 0;
     char chLower = tolower(ch); // Convert the character to lowercase
-    
+
     // Iterate through the string using a pointer
     while (*str != '\0') {
         if (tolower(*str) == chLower) // Convert the string character to lowercase and compare
             count++; // Increment count if the character matches
         str++; // Move the pointer to the next character
     }
-    
+
     return count;
 }
 
 int main(int argc, char *argv[]) {
-    
+
     char ch = argv[1][0]; // Get the first character from the first argument
     char *str = argv[2];  // Pointer to the input string
-    
+
     // Call the countCharacter function to count the character in the string
     int result = countCharacter(ch, str);
-    
+
     // Print the result
     printf("%d\n", result);
-    
+
     return 0;
 }
