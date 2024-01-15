@@ -6,6 +6,7 @@
 *.jpg
 *.out
 *.zip
+*.class
 
 notes/
 test*
