@@ -2,18 +2,22 @@
 
 {% block content %}
 
+<ul>
+    {% for x in x %}
+    <li>
+        {% if x|divisibleby:"3" and x|divisibleby:"5" %}
+        <p>FizzBuzz</p>
 
-{% for x in x %}
-{% if x|divisibleby:"3" and x|divisibleby:"5" %}
-<p>FizzBuzz</p>
-{% elif x|divisibleby:"3" %}
-<p>Fizz</p>
-{% elif x|divisibleby:"5" %}
-<p>Buzz</p>
-{% else %}
-<p>{{ x }}</p>
-{% endif %}
-{% endfor %}
+        {% elif x|divisibleby:"3" %}
+        <p>Fizz</p>
+        {% elif x|divisibleby:"5" %}
+        <p>Buzz</p>
+        {% else %}
+        <p>{{ x }}</p>
+    </li>
+    {% endif %}
+    {% endfor %}
+</ul>
 
 
 {% endblock %}
