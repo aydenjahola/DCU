@@ -119,7 +119,7 @@ class Book {
         return rating;
     }
 
-    // setters (optional, not used in provided code)
+    // setters (optional, not used in this code)
 
     /**
      * toString implementation
