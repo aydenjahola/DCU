@@ -8,6 +8,6 @@ urlpatterns = [
     path('books/year/<int:year>/', views.view_books_by_year, name='books_by_year'),
     path('books/category/<str:category>/',
          views.view_books_by_catergory, name='books_by_category'),
-    path('books/category/<str:category>/year/<int:year>/`',
+    path('books/category/<str:category>/year/<int:year>/',
          views.view_books_by_year_and_category, name='books_by_year_and_category')
 ]

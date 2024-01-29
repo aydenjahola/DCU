@@ -29,7 +29,7 @@ def view_books_by_catergory(request, category):
     return render(request, 'books_by_category.html', {'books': books_by_category, 'category': category})
 
 
-def view_books_by_year_and_category(request, year, category):
+def view_books_by_year_and_category(request, category, year):
     books_by_year_and_category = get_list_or_404(
         Book, category=category, year=year)
     return render(request, 'books_by_year_and_category.html', {'books': books_by_year_and_category, 'category': category, 'year': year})
