@@ -1,10 +1,16 @@
-<!-- index.html -->
-<html>
+<!-- FILEPATH: /home/ayden/dcu/year-2/sem-2/ca298/ca298-template/Lab_3/Library/templates/templates/index.html -->
+{% extends 'base.html' %}
 
-<head>Hello World</head>
+{% block title %}
+<title>Welcome to Book Shop</title>
+{% endblock %}
 
-<body>
-    <p>Hello world</p>
-</body>
+{% block content %}
+<div class="hero-section text-center">
+    <h1>Welcome to Book Shop</h1>
+    <p>Discover a world of books!</p>
+    <a href="/books" class="btn">Browse Books</a>
+</div>
 
-</html>
+
+{% endblock %}
