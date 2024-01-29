@@ -6,12 +6,15 @@
     {% for x in x %}
     <li>
         {% if x|divisibleby:"3" and x|divisibleby:"5" %}
+
         <p>FizzBuzz</p>
 
         {% elif x|divisibleby:"3" %}
         <p>Fizz</p>
+
         {% elif x|divisibleby:"5" %}
         <p>Buzz</p>
+
         {% else %}
         <p>{{ x }}</p>
     </li>
