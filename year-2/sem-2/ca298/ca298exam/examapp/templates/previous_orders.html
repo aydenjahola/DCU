@@ -1,0 +1,10 @@
+{% extends 'base.html' %} {% block content %} {% if orders %}
+<ul>
+  {% for order in orders %}
+  <li>Title: {{ order.game.name }} - Date ordered {{ order.date_ordered }}</li>
+  {% endfor %}
+</ul>
+{% else %}
+<h3>You haven't ordered any games</h3>
+
+{% endif %} {% endblock %}

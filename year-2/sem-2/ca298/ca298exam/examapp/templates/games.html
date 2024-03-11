@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <ul class="list-group">
+        {% for game in games %}
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-6">
+              <h4>{{ game.name }}</h4>
+              <p>{{ game.description }}</p>
+              <p><strong>Platform:</strong> {{ game.platform }}</p>
+              <p><strong>Genre:</strong> {{ game.genre }}</p>
+              <p><strong>Price:</strong> €{{ game.price }}</p>
+              {% if game.stock == 0 %}
+              <p>This item is out of stock</p>
+              {% else %}
+              <p><strong>Stock:</strong> {{ game.stock }}</p>
+              {% endif %}
+            </div>
+            <div class="col-md-6">
+              <a
+                href="{% url 'single_game' game_id=game.id %}"
+                class="btn btn-primary"
+                >View</a
+              >
+            </div>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}
